@@ -21,7 +21,7 @@
 #define ASYNC_UDP_TEENSY41_DEBUG_PORT       Serial
 
 // Debug Level from 0 to 4
-#define _ASYNC_UDP_TEENSY41_LOGLEVEL_       1
+#define _ASYNC_UDP_TEENSY41_LOGLEVEL_       3
 
 #define SHIELD_TYPE     "Teensy4.1 QNEthernet"
 
