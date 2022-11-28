@@ -105,8 +105,8 @@ public:
       udp.onPacket([this](AsyncUDPPacket packet)
                    { this->udp_cb(packet); });
 
-      // Send unicast
-      delay(3000);
+    // Send unicast
+     // delay(3000);
      
       udp.print("Hello Server!");
     }
@@ -155,7 +155,7 @@ void setup()
   start_ethernet();
   byte ip[] = {192, 168, 1, 10};
   uart1.connect(ip, 5698, Serial1, 115200);
-//  uart2.connect(ip, 5699, Serial2, 115200);
+  uart2.connect(ip, 5699, Serial2, 115200);
   delay(1000);
   my_timer.start(1000);
 }
@@ -165,12 +165,12 @@ int i1 = 0, i2 = 0;
 void loop()
 {
   uart1.update();
-  //uart2.update();
-  // if (my_timer.ellapsed())
-  // {
-  //   my_timer.restart();
-  //   Serial1.printf("%d Hello1\n", ++i1);
-  //   Serial2.printf("%d Hello2\n", ++i2);
-  // }
+  uart2.update();
+  if (my_timer.ellapsed())
+  {
+    my_timer.restart();
+    Serial1.printf("%d Hello1\n", ++i1);
+    Serial2.printf("%d Hello2\n", ++i2);
+  }
   delay(1);
 }
